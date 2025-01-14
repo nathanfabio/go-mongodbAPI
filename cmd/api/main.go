@@ -32,6 +32,6 @@ func main() {
 
 	services.NewClient(mongoClient)
 
-	log.Panicln("Running in port 8080")
+	log.Println("Running in port 8080")
 	log.Fatal(http.ListenAndServe(":8080", handlers.CreateRouter()))
 }
