@@ -15,3 +15,7 @@ start:
 	./${BINARY}
 
 restart: build start
+
+
+#connection string
+# mongodb://admin:password@localhost:27017/mongo_api?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false
