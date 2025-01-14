@@ -2,7 +2,11 @@ module github.com/nathanfabio/go-mongodbAPI
 
 go 1.22.1
 
-require go.mongodb.org/mongo-driver v1.17.2
+require (
+	github.com/go-chi/chi/v5 v5.2.0
+	github.com/go-chi/cors v1.2.1
+	go.mongodb.org/mongo-driver v1.17.2
+)
 
 require (
 	github.com/golang/snappy v0.0.4 // indirect
