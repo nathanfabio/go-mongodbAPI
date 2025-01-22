@@ -12,7 +12,7 @@ build:
 	go build -o ${BINARY} ./cmd/api/
 
 start:
-	./${BINARY}
+	@env MONGO_DB_USERNAME=${MONGO_DB_USERNAME} MONGO_DB_PASSWORD=${MONGO_DB_PASSWORD} ./${BINARY}
 
 restart: build start
 
