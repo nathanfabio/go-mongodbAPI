@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"net/http"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/cors"
@@ -20,8 +21,10 @@ func CreateRouter() *chi.Mux {
 		AllowedHeaders: []string{"Content-Type", "Authorization", "Accept", "Origin", "X-Requested-With"},
 		ExposedHeaders: []string{"Link"},
 		AllowCredentials: true,
-		MaxAge: 300,
+		MaxAge: 300, // Maximum value not to check CORS for every request
 	}))
+
+	router.Handle("/*", http.FileServer(http.Dir("./static")))
 
 	router.Route("/api", func(router chi.Router) {
 		//version 1
