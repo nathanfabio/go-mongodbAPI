@@ -89,6 +89,8 @@ If you prefer not to use Docker:
 | PUT    | `/api/v1/todos/update/{id}` | Update an existing TODO by ID  |
 | DELETE | `/api/v1/todos/delete/{id}` | Delete a TODO by ID            |
 
+---
+
 ### Sample TODO Object
 ```json
 {
@@ -98,6 +100,9 @@ If you prefer not to use Docker:
     "created_at": "2025-01-20T15:00:00Z",
     "update_at": "2025-01-21T12:00:00Z"
 }
+
+```
+---
 
 ## Makefile Commands
 
@@ -114,11 +119,13 @@ make start
 # Install Go dependencies
 make tidy
 
+---
 
-
-
+```
 ## LICENSE
 
 This project is licensed under the MIT License.
 
 Feel free to contribute, fork, or share!
+
+---
