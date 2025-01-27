@@ -14,20 +14,20 @@ var collection *mongo.Collection
 // ConnMongo connects to MongoDB
 func ConnMongo() (*mongo.Client, error) {
 	// connection string
-	clientOpions := options.Client().ApplyURI("mongodb://localhost:27017")
+	clientOptions := options.Client().ApplyURI("mongodb://localhost:27017")
 
 	// getting username and password from environment variables
 	username := os.Getenv("MONGO_DB_USERNAME")
 	password := os.Getenv("MONGO_DB_PASSWORD")
 
-	// settimg auth
-	clientOpions.SetAuth(options.Credential{
+	// setting auth
+	clientOptions.SetAuth(options.Credential{
 		Username: username,
 		Password: password,
 	})
 
 	// connect to MongoDB
-	client, err := mongo.Connect(context.Background(), clientOpions)
+	client, err := mongo.Connect(context.Background(), clientOptions)
 	if err != nil {
 		log.Fatal(err)
 		return nil, err
